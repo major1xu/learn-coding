@@ -30,33 +30,30 @@ void setup() {
 void loop() {
   int buttonState = digitalRead(BUTTON_PIN8); // read new state
   if (buttonState == LOW) {
-    Serial.println("The button is being pressed");
-    // digitalWrite(BUZZER_PIN, HIGH); // turn on 
-    tone(BUZZER_PIN, 130.000, 100);  // sends a frequency of 500Hz
+    Serial.println("The button 8 is being pressed");
+    tone(BUZZER_PIN, 100.000, 100);  // sends a frequency of 500Hz
   }
 
   buttonState = digitalRead(BUTTON_PIN7); // read new state
   if (buttonState == LOW) {
-    Serial.println("The button is being pressed");
-    //digitalWrite(BUZZER_PIN, HIGH); // turn on 
+    Serial.println("The button 7 is being pressed");
     tone(BUZZER_PIN, 293.000, 100);  // sends a frequency of 500Hz
   }
+  
    buttonState = digitalRead(BUTTON_PIN6); // read new state
   if (buttonState == LOW) {
-    Serial.println("The button is being pressed");
-    //digitalWrite(BUZZER_PIN, HIGH); // turn on 
-    tone(BUZZER_PIN, 659.000, 100);  // sends a frequency of 500Hz
+    Serial.println("The button 6 is being pressed");
+    tone(BUZZER_PIN, 685.000, 100);  // sends a frequency of 500Hz
   }
+  
    buttonState = digitalRead(BUTTON_PIN5); // read new state
   if (buttonState == LOW) {
-    Serial.println("The button is being pressed");
-    //digitalWrite(BUZZER_PIN, HIGH); // turn on 
+    Serial.println("The button 5 is being pressed");
     tone(BUZZER_PIN, 1396.000, 100);  // sends a frequency of 500Hz
   }
    buttonState = digitalRead(BUTTON_PIN4); // read new state
   if (buttonState == LOW) {
-    Serial.println("The button is being pressed");
-    //digitalWrite(BUZZER_PIN, HIGH); // turn on 
+    Serial.println("The button 4 is being pressed");
     tone(BUZZER_PIN, 3135.000, 100);  // sends a frequency of 500Hz
   }
 }

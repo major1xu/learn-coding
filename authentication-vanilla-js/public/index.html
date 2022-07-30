@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calorie Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container pt-4">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Calorie Tracker</h2>
+        <div>Total Calories: <strong id="total">-</strong></div>
+      </div>
+      <div id="meals-container">
+        <div class="row">
+          <div class="col-3">
+            <div class="card">
+              <div class="card-body">
+                <form id="form-entry" class="mb-0">
+                  <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title">
+                  </div>
+                  <div class="form-group">
+                    <label for="calories">Calories</label>
+                    <input type="number" class="form-control" id="calories">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-9">
+            <ul class="list-group" id="meals"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="/main.js"></script>
+  </body>
+</html>

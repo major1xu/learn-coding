@@ -7,17 +7,7 @@ app.use(express.static('public'))
 
 // store in memory
 let meals = []
-getUser((err, user) => {
-  if (err) {
-    return console.log(err)
-  }
-  getPostsByUserId(user.id, (err, posts) => {
-    if (err) {
-      return console.log(err)
-    }
-    console.log('found %s posts', posts.length)
-  })
-)
+
 app.get('/meals', (req, res) => {
   return res.send(meals)
 })

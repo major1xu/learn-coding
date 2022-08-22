@@ -10,13 +10,13 @@ class App {
       })
     })
   }
-  init () {
-    this.meals = [
-      { id: 1, title: 'Breakfast Burrito', calories: 150 },
-      { id: 2, title: 'Turkey Sandwich', calories: 600 },
-      { id: 3, title: 'Roasted Chicken', calories: 725 }
-    ]
-    this.render()
+  async init () {
+    try {
+      this.meals = await this.request('GET', '/meals')
+      this.render()
+    } catch (err) {
+      alert(`Error: ${err.message}`)
+    }
   }
   request (method, url, data = null) {
   return new Promise((resolve, reject) => {
@@ -37,16 +37,26 @@ class App {
     }
   })
 }
-  addMeal (meal) {
+async addMeal (data) {
+  try {
+    const meal = await this.request('POST', '/meals', data)
     document.getElementById('meals').appendChild(this.createMealElement(meal))
     this.meals.push(meal)
     this.updateTotalCalories()
+  } catch (err) {
+    alert(`Error: ${err.message}`)
   }
-  deleteMeal (id) {
+}
+async deleteMeal (id) {
+  try {
+    await this.request('DELETE', `/meals/${id}`)
     let index = this.meals.map(o => o.id).indexOf(id)
     this.meals.splice(index, 1)
     this.updateTotalCalories()
+  } catch (err) {
+    alert(`Error: ${err.message}`)
   }
+}
   updateTotalCalories () {
     let elTotal = document.getElementById('total')
     elTotal.textContent = this.meals.reduce((acc, o) => acc + o.calories, 0).toLocaleString()

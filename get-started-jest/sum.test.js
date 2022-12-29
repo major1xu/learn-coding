@@ -1,4 +1,6 @@
-const sum = require('./sum');
+// const sum = require('./sum');
+import sum from './sum';
+
 
 test('adds 1 + 2 to equal 3', () => {
   expect(sum(1, 2)).toBe(3);
@@ -92,3 +94,19 @@ test('compiling android goes as expected', () => {
   expect(() => compileAndroidCode()).toThrow('you are using the wrong JDK');
   expect(() => compileAndroidCode()).toThrow(/JDK/);
 });
+
+// https://www.pluralsight.com/guides/how-does-jest.fn()-work
+/*
+function greetWorld(greettingFn) {
+  return greetingFn('world');
+}
+
+test('greetWorld calls the greeting function properly', () => {
+  const greetImplementation = name => `Hey, ${name}!`;
+  const mockFn = jest.fn(greetImplementation);
+  const value = greetWorld(mockFn);
+  expect(mockFn).toHaveBeenCalled();
+  expect(mockFn).toHaveBeenCalledWith('world');
+  expect(value).toBe('Hey, world!');
+});
+*/

@@ -1,4 +1,6 @@
+// 
 // https://jestjs.io/docs/mock-functions
+// mocking modules
 
 import axios from 'axios';
 

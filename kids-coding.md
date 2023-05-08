@@ -16,4 +16,7 @@ https://www.stlplace.com/2021/12/30/teach-kids-programming/
 Raspberry Pi
 https://www.stlplace.com/2021/11/07/raspberry-pi/
 
+https://www.kodable.com/
+
+https://scratch.mit.edu/ (Sophia seems really liked it)
 

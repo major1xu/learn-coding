@@ -110,3 +110,43 @@ test('greetWorld calls the greeting function properly', () => {
   expect(value).toBe('Hey, world!');
 });
 */
+
+// https://stackoverflow.com/questions/65190123/referenceerror-jest-is-not-defined-when-running-unit-test
+
+import {jest} from '@jest/globals'
+
+// https://jestjs.io/docs/mock-functions
+
+function forEach(items, callback) {
+  for (let index = 0; index < items.length; index++) {
+    callback(items[index]);
+  }
+}
+
+test('mock function goes as expected', () => {
+  const mockCallback = jest.fn(x => 42 + x);
+  forEach([0, 1], mockCallback);
+
+  // The mock function is called twice
+  expect(mockCallback.mock.calls.length).toBe(2);
+
+  // The first argument of the first call to the function was 0
+  expect(mockCallback.mock.calls[0][0]).toBe(0);
+
+  // The first argument of the second call to the function was 1
+  expect(mockCallback.mock.calls[1][0]).toBe(1);
+
+  // The return value of the first call to the function was 42
+  expect(mockCallback.mock.results[0].value).toBe(42);
+});
+
+test('mock return values goes as expected', () => {
+  const myMock = jest.fn();
+  console.log(myMock());
+  // > undefined
+
+  myMock.mockReturnValueOnce(10).mockReturnValueOnce('x').mockReturnValue(true);
+
+  console.log(myMock(), myMock(), myMock(), myMock());
+  // > 10, 'x', true, true
+});

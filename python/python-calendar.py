@@ -8,8 +8,8 @@ year = int(input('Enter Year:'))
 print(calendar(year,2,1,8.3))
 
 # https://twitter.com/clcoding/status/1694560164370604172
-#Ukraine Flag using Python
-
+# Ukraine Flag using Python
+# Below is saved in another file: jupyter notebook file Ukraine-flag.ipynb
 import numpy as np
 import matplotlib.pyplot as py
 import matplotlib.patches as patch

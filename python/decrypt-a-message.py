@@ -1,7 +1,17 @@
 import pandas as pd
+import argparse
+
+parser = argparse.ArgumentParser(description="A sample script")
+parser.add_argument("fileURL", help="Input file URL")  # Positional argument
+parser.add_argument("-v", "--verbose", action="store_true", help="Increase output verbosity")  # Optional flag
+
+args = parser.parse_args()
+print(f"Hello, {args.fileURL}")
+if args.verbose:
+    print("Verbosity is on")
 
 # Fetch all tables from a webpage
-url = "https://docs.google.com/document/d/e/2PACX-1vTMOmshQe8YvaRXi6gEPKKlsC6UpFJSMAk4mQjLm_u1gmHdVVTaeh7nBNFBRlui0sTZ-snGwZM4DBCT/pub"
+url = {args.fileURL}
 print(url)
 tables = pd.read_html(url, encoding='utf-8')
 

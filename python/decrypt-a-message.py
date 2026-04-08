@@ -25,12 +25,6 @@ tables = pd.read_html(url, encoding="utf-8")
 # Select the first table on the page
 df = tables[0]
 
-print(df.size)
-grid_size = len(df)
-print(grid_size)
-print(df.shape[0])
-print(df.shape[1])
-
 # hard coding the grid size because the row count is not correct from dataframe
 grid = [[" " for _ in range(4)] for _ in range(4)]
 

@@ -27,6 +27,7 @@ tables = pd.read_html(url, encoding="utf-8")
 df = tables[0]
 
 numberOfColumns=df.shape[1]
+#print(numberOfColumns)
 
 max_row_number=0
 for row in df.itertuples():
@@ -35,14 +36,13 @@ for row in df.itertuples():
 
 #print(max_row_number)
 
-# hard coding the grid size because the row count is not correct from dataframe
 grid = [[" " for _ in range(max_row_number+1)] for _ in range(max_row_number+1)]
 
 for row in df.itertuples():
     #print(row[1], row[2], row[3])  
     # Assign Unicode characters to specific (row, col) positions
     if(row[1] != "x-coordinate"): 
-        grid[int(row[1])][int(row[3])] = row[2] 
+        grid[int(row[1])][max_row_number-int(row[3])] = row[2] 
 
 # Print the grid
 # if we print the grid this way, due to he nature of the loop, do we flip the grid?

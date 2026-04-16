@@ -1,3 +1,9 @@
+(.venv) minjiexu@Macmini learn-coding % history 1 |grep pyttsx3
+  709  python3 -m pip install pyttsx3
+  712  pip install pyttsx3
+  713  /Users/minjiexu/learn-coding/python/.venv/bin/python -m pip install pyttsx3
+  715  python3 -m pip install pyttsx3
+
 (Update 2026-04-12) pow_gen_coroutine
 Python coroutine for pow_gen (指数函数）
 Input
